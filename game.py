@@ -4,10 +4,16 @@ import pygame
 from pygame.locals import *
 import time
 
-pygame.draw.rect()
+# Initializes offsets for the ball.
+BALL_X_OFFSET, BALL_Y_OFFSET = (WINDOW_WIDTH / 2), (WINDOW_HEIGHT / 2)
+BALL_OFFSET = (BALL_X_OFFSET, BALL_Y_OFFSET)
 
 # Class to run the pygame itself.
 class Game:
+    '''Intializes the ball to be used in-game.'''
+    def ball_init(self) -> None:
+        self.ball = pygame.draw.circle(self.surface, WHITE, BALL_OFFSET, BALL_RADIUS)
+
     '''Initializes the class and its variables.'''
     def __init__(self) -> None:
         pygame.init()
@@ -17,10 +23,13 @@ class Game:
 
         # Sets the window title
         pygame.display.set_caption("Breakout")
-        # Sets the window display width and height.
+        # Sets the window display.
         self.surface = pygame.display.set_mode((WINDOW_WIDTH,WINDOW_HEIGHT))
         # Makes the background white.
-        self.surface.fill(WHITE)
+        self.surface.fill(BLACK)
+
+        # Initializes the visual aspects
+        self.ball_init()
 
     '''When this function is called, it checks to make sure the pygame's running
        boolean is True. Then it continues to run the variable.'''
