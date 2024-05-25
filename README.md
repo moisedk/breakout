@@ -1,3 +1,6 @@
+moisedk
+Jhon Paul Espiritu
+Sukhreen Sandhu
 # Breakout Challenge
 
 Your goal is to create a playable version of the Wozniak's classic game Breakout.
